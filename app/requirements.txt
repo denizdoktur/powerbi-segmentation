@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pandas
+numpy
+joblib
+scikit-learn
+streamlit
+python-dotenv
+langchain>=0.1.0
+langchain-community>=0.0.10
+openai>=1.0.0
+langchain-experimental
+tabulate

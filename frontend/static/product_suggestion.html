@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="">
+    <title>Customer Segmentation Project.</title>
+    <link href="css/oneri.css" rel="stylesheet" />
+    <link href="css/floating_button.css" rel="stylesheet" />
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <!-- Floating Button -->
+  </head>
+  <body class="sub_page">
+    <div class="hero_area">
+      <!-- Header aynı kalır -->
+      <header class="header_section">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="index.html">Anasayfa <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="product.html">Ürünlerimiz</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="product_suggestion.html">Ürün Önerİ Sİstemİ</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </div>
+    <section class="product_section layout_padding">
+      <div class="container main-container">
+        <h1 class="text-center page-title">Ürün Öneri Sistemi</h1>
+        <p class="text-center subtitle">Seçili faturaya göre Cross-Sell, Up-Sell ve Kombine önerileri</p>
+        <div class="mb-4">
+          <label for="faturaNo" class="form-label section-title">Fatura Numarası</label>
+          <input type="text" id="faturaNo" class="form-control" placeholder="Fatura numarasını giriniz (örneğin: 536365)">
+        </div>
+        <div id="sepet" class="row mb-4">
+          <div class="col-md-6">
+            <div class="metric-card">
+              <h3 id="urunSayisi">0</h3>
+              <p>Ürün Sayısı</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="metric-card">
+              <h3 id="toplamFiyat">₺0</h3>
+              <p>Toplam Fiyat</p>
+            </div>
+          </div>
+        </div>
+        <div class="section-title">Sepetteki Ürünler</div>
+        <div class="table-responsive mb-5">
+          <table class="table table-hover table-bordered align-middle">
+            <thead class="table-danger text-center">
+              <tr>
+                <th>Ürün Adı</th>
+                <th>Stok Kodu</th>
+                <th>Birim Fiyat</th>
+              </tr>
+            </thead>
+            <tbody id="sepetUrunleriBody"></tbody>
+          </table>
+        </div>
+        <div class="section-title">Cross-Sell Önerileri</div>
+        <div class="table-responsive mb-4">
+          <table class="table table-hover table-bordered align-middle">
+            <thead class="table-warning text-center">
+              <tr>
+                <th>Ürün Adı</th>
+                <th>Stok Kodu</th>
+                <th>Ürün Tipi</th>
+                <th>Birim Fiyat</th>
+              </tr>
+            </thead>
+            <tbody id="crossTableBody"></tbody>
+          </table>
+        </div>
+        <div class="section-title">Up-Sell Önerileri</div>
+        <div class="table-responsive mb-4">
+          <table class="table table-hover table-bordered align-middle">
+            <thead class="table-success text-center">
+              <tr>
+                <th>Ürün Adı</th>
+                <th>Stok Kodu</th>
+                <th>Ürün Tipi</th>
+                <th>Birim Fiyat</th>
+              </tr>
+            </thead>
+            <tbody id="upTableBody"></tbody>
+          </table>
+        </div>
+        <div class="section-title">Kombine Önerileri</div>
+        <div class="table-responsive mb-4">
+          <table class="table table-hover table-bordered align-middle">
+            <thead class="table-info text-center">
+              <tr>
+                <th>Ürün Adı</th>
+                <th>Stok Kodu</th>
+                <th>Ürün Tipi</th>
+                <th>Birim Fiyat</th>
+              </tr>
+            </thead>
+            <tbody id="comboTableBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </body>
+  <input type="checkbox" id="chat-toggle">
+  <label class="chat-btn" for="chat-toggle">
+    <i class="fa fa-commenting-o comment"></i>
+    <i class="fa fa-close close"></i>
+  </label>
+  <div class="chat-wrapper">
+    <div class="chat-header">
+      <h6>Asistan</h6>
+    </div>
+    <div class="chat-body" id="chat-messages">
+      <div class="chat-message bot">Merhaba! Size nasıl yardımcı olabilirim?</div>
+    </div>
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Mesajınızı yazın..." onkeydown="if(event.key==='Enter') sendMessage()">
+      <button onclick="sendMessage()" id="send-button">
+        <i class="fa fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</html>

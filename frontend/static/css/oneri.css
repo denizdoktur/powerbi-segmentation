@@ -1,0 +1,70 @@
+/* Sadece öneri sayfasına özel body stili */
+body.oneri {
+  background: linear-gradient(135deg, #cd0e2c 0%, #cd0e2c 100%);
+  color: #1f2937;
+  padding: 40px 0;
+}
+
+/* Beyaz kart görünümü için ana konteyner */
+.main-container {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 30px;
+  max-width: 960px;
+  margin: auto;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Sayfa başlığı */
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Alt başlık */
+.subtitle {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+/* Bölüm başlığı */
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 2rem 0 1rem;
+  color: #222;
+}
+
+/* Kırmızı kartlar (Ürün sayısı, toplam fiyat) */
+.metric-card {
+  background-color: #cd0e2c;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card h3 {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/* Fiyat etiketi */
+.price-tag {
+  background: #cd0e2c;
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Input focus görünümü */
+.form-control:focus {
+  border-color: #cd0e2c;
+  box-shadow: 0 0 0 0.25rem rgba(220, 38, 38, 0.2);
+}

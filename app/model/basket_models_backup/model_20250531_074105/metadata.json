@@ -1,0 +1,13 @@
+{
+  "training_date": "2025-05-31T07:38:44.536044",
+  "training_duration": "0:02:20.785720",
+  "data_shape": [
+    541909,
+    15
+  ],
+  "unique_invoices": 25900,
+  "unique_items": 4070,
+  "lightfm_trained": true,
+  "lgb_trained": true,
+  "popular_items_count": 50
+}

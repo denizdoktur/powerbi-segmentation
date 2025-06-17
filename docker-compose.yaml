@@ -1,0 +1,19 @@
+services:
+  backend:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    env_file:
+      - /.env
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:80"   # host 3000 → container 80
+    depends_on:
+      - backend
